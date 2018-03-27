@@ -3,9 +3,18 @@ node {
   def workspace = pwd()
 
   if (env.BRANCH_NAME == 'master') {
-    stage ('Imprimir MASTER') {
-      echo 'MASTER'
-    }
+    def mvnHome
+	stage('Preparation') {
+      git 'https://github.com/wildfly/quickstart.git'
+      mvnHome = tool 'maven jenkins'
+	}
+	stage('Build') {
+      if (isUnix()) {
+        sh "'${mvnHome}/bin/mvn' -f helloworld -Dmaven.test.failure.ignore clean package"
+      } else {
+        bat(/"${mvnHome}\bin\mvn" -f helloworld -Dmaven.test.failure.ignore clean package/)
+      }
+	}
   }
 
   else if (env.BRANCH_NAME == '8.x') {
