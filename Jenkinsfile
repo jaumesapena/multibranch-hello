@@ -12,7 +12,7 @@ node {
       }
    }
    stage('Copy') { //COPIAR EL WAR VIA SSH
-      sshPublisher(publishers: [sshPublisherDesc(configName: 'wildfly-docker', transfers: [sshTransfer(excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: 'deploy', remoteDirectorySDF: false, removePrefix: 'jts/target', sourceFiles: 'jts/target/jts.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+      sshPublisher(publishers: [sshPublisherDesc(configName: 'wildfly-docker', transfers: [sshTransfer(excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: 'deploy', remoteDirectorySDF: false, removePrefix: 'jts/application-component-1/target', sourceFiles: 'jts/application-component-1/target/jts-application-component-1.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
    }
    stage('Deploy') {
      if (isUnix()) {
