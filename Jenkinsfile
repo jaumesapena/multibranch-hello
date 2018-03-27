@@ -9,8 +9,7 @@ node {
   }
 
   else if (env.BRANCH_NAME == '8.x') {
-    stage ('Some stage branch step') {
-      def mvnHome
+    def mvnHome
 	stage('Preparation') {
       git 'https://github.com/wildfly/quickstart.git'
       mvnHome = tool 'maven jenkins'
@@ -21,7 +20,7 @@ node {
       } else {
         bat(/"${mvnHome}\bin\mvn" -f jts -Dmaven.test.failure.ignore clean package/)
       }
-    }
+	}
   }
   
   else if (env.BRANCH_NAME == '9.x') {
