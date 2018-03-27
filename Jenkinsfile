@@ -11,12 +11,33 @@ node {
     }
   }
 
-  else if (env.BRANCH_NAME == 'stage') {
+  else if (env.BRANCH_NAME == '8.x') {
     stage ('Some stage branch step') {
       sh 'do something'
     }
-    stage ('Deploy to stage target') {
-      sh 'do something else'
+  }
+  
+  else if (env.BRANCH_NAME == '9.x') {
+    stage ('Some stage branch step') {
+      sh 'do something'
+    }
+  }
+  
+  else if (env.BRANCH_NAME == '10.x') {
+    stage ('Some stage branch step') {
+      sh 'do something'
+    }
+  }
+  
+  else if (env.BRANCH_NAME == '11.x') {
+    stage ('Some stage branch step') {
+      sh 'do something'
+    }
+  }
+  
+  else if (env.BRANCH_NAME == '12.x') {
+    stage ('Some stage branch step') {
+      sh 'do something'
     }
   }
 
