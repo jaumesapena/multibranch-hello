@@ -17,7 +17,7 @@ node {
    stage('Deploy') {
      if (isUnix()) {
         //DEPLOY VIA SSH UNIX
-        sh 'ssh jboss@172.17.0.3 \'wildfly/bin/jboss-cli.sh --connect --command="deploy --path="deploy/jts.war""\''
+        sh 'ssh jboss@172.17.0.3 \'wildfly/bin/jboss-cli.sh --connect --command="deploy --path="deploy/jts-application-component-1.war""\''
       } else {
         //DEPLOY VIA SSH WINDOWS
         bat 'C:\\Users\\jsapena\\Desktop\\git-bash -c ssh docker@192.168.99.100 \'wildfly/bin/jboss-cli.sh --connect --command="deploy --path="deploy/helloworld.war""\''
