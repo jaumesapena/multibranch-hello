@@ -3,41 +3,38 @@ node {
   def workspace = pwd()
 
   if (env.BRANCH_NAME == 'master') {
-    stage ('Some Stage 1 for master') {
-      sh 'do something'
-    }
-    stage ('Another Stage for Master') {
-      sh 'do something else here'
+    stage ('Imprimir MASTER') {
+      echo 'MASTER'
     }
   }
 
   else if (env.BRANCH_NAME == '8.x') {
-    stage ('Some stage branch step') {
-      sh 'do something'
+    stage ('Imprimir MASTER') {
+      echo '8.x'
     }
   }
   
   else if (env.BRANCH_NAME == '9.x') {
-    stage ('Some stage branch step') {
-      sh 'do something'
+    stage ('Imprimir MASTER') {
+      echo '9.x'
     }
   }
   
   else if (env.BRANCH_NAME == '10.x') {
-    stage ('Some stage branch step') {
-      sh 'do something'
+    stage ('Imprimir MASTER') {
+      echo '10.x'
     }
   }
   
   else if (env.BRANCH_NAME == '11.x') {
-    stage ('Some stage branch step') {
-      sh 'do something'
+    stage ('Imprimir MASTER') {
+      echo '11.x'
     }
   }
   
   else if (env.BRANCH_NAME == '12.x') {
-    stage ('Some stage branch step') {
-      sh 'do something'
+    stage ('Imprimir MASTER') {
+     echo '11.x'
     }
   }
 
