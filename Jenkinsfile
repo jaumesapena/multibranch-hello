@@ -12,5 +12,6 @@ node {
         		sh "'${mvnHome}/bin/mvn' -f jts -Dmaven.test.failure.ignore clean package"
      		} else {
         		bat(/"${mvnHome}\bin\mvn" -f jts -Dmaven.test.failure.ignore clean package/)
-      	}
+      		}
+	}
 }
